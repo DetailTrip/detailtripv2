@@ -2,21 +2,20 @@
 import React from 'react';
 import HeroSection from '../components/home/HeroSection';
 import TrustStats from '../components/home/TrustStats';
+import RealProblemsSection from '../components/home/RealProblemsSection';
+import HowItWorksSummary from '../components/home/HowItWorksSummary'; // ✅ Use correct name
 import ServiceHighlights from '../components/home/ServiceHighlights';
-import OurWorkGallery from '../components/home/OurWorkGallery';
-import HowItWorksSummary from '../components/home/HowItWorksSummary';
-import WhyChooseUsHighlights from '../components/home/WhyChooseUsHighlights'; // Import the new component
-// Import other section components here as we build them
+import WhyChooseUsHighlights from '../components/home/WhyChooseUsHighlights';
 
 const HomePage: React.FC = () => {
   return (
     <div>
       <HeroSection />
       <TrustStats />
+      <RealProblemsSection />
+      <HowItWorksSummary /> {/* ✅ Updated version with map inside */}
       <ServiceHighlights />
-      <OurWorkGallery />
-      <HowItWorksSummary />
-      <WhyChooseUsHighlights /> {/* Add the WhyChooseUsHighlights component here */}
+      <WhyChooseUsHighlights />
 
       {/* Placeholder for the rest of the homepage sections */}
       {/* We will build these out next:

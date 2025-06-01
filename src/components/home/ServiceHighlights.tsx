@@ -1,7 +1,6 @@
-// src/components/home/ServiceHighlights.tsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Car, Sparkles, ShieldCheck } from 'lucide-react'; // Example icons
+import { Car, Sparkles } from 'lucide-react';
 
 interface HighlightItemProps {
   to: string;
@@ -12,42 +11,39 @@ interface HighlightItemProps {
 }
 
 const HighlightItem: React.FC<HighlightItemProps> = ({ to, IconComponent, title, description, linkLabel }) => (
-  <div className="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col text-center items-center h-full">
+  <article
+    className="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col justify-between text-center items-center h-full"
+    aria-label={title}
+  >
     <IconComponent className="h-16 w-16 text-blue-600 mb-6" strokeWidth={1.5} />
     <h3 className="text-2xl font-bold text-gray-900 mb-3">{title}</h3>
     <p className="text-gray-600 mb-6 flex-grow">{description}</p>
     <Link
       to={to}
       className="mt-auto inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200"
+      aria-label={linkLabel}
     >
       {linkLabel} &rarr;
     </Link>
-  </div>
+  </article>
 );
 
 const ServiceHighlights: React.FC = () => {
   const highlights: HighlightItemProps[] = [
     {
-      to: "/services#interior", // Links to services page, potentially an anchor
+      to: "/services#interior",
       IconComponent: Car,
       title: "Expert Interior Cleaning",
       description: "From light refreshes to full resets, we clean with care — tackling salt, crumbs, and pet fur safely.",
       linkLabel: "View Interior Services"
     },
     {
-      to: "/services#exterior", // Links to services page, potentially an anchor
+      to: "/services#exterior",
       IconComponent: Sparkles,
       title: "Exterior Decon & Protect",
       description: "A full exterior service that removes stuck-on grime and adds protection with wax or sealant. Includes wheels, tires, and door jambs.",
       linkLabel: "View Exterior Service"
-    },
-    {
-      to: "/lp/pet-lovers", // Links to the pet landing page
-      IconComponent: ShieldCheck, // Could use a PawPrint icon from react-icons if preferred
-      title: "Pet Owners' Choice",
-      description: "Specialized pet hair removal and deep interior cleaning. We treat your ride like home — fur-free and fresh.",
-      linkLabel: "Pet-Focused Detailing"
-    },
+    }
   ];
 
   return (
@@ -61,7 +57,7 @@ const ServiceHighlights: React.FC = () => {
             We bring professional detailing to your doorstep in Timmins, focusing on what your vehicle truly needs.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch"> {/* items-stretch for equal height cards if content varies */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {highlights.map((highlight) => (
             <HighlightItem
               key={highlight.title}

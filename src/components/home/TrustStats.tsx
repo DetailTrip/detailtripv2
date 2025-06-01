@@ -9,26 +9,47 @@ interface StatItemProps {
 
 const StatItem: React.FC<StatItemProps> = ({ value, label, IconComponent }) => (
   <div className="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 text-center">
-    {IconComponent && <IconComponent className="mx-auto h-10 w-10 text-blue-600 mb-3" strokeWidth={1.5} />}
+    {IconComponent && (
+      <IconComponent className="mx-auto h-10 w-10 text-blue-600 mb-3" strokeWidth={1.5} />
+    )}
     <div className="text-4xl font-bold text-blue-600">{value}</div>
-    <div className="text-sm sm:text-base text-gray-600 mt-1">{label}</div>
+    <div className="text-sm sm:text-base text-gray-600 mt-1 break-words leading-snug">
+      {label}
+    </div>
   </div>
 );
 
 const TrustStats: React.FC = () => {
   const stats: StatItemProps[] = [
     {
-      value: "1,400+",
+      value: '1,400+',
       label: (
         <>
-          Past Details<span className="text-gray-400 text-xs ml-1">*</span>
+          Vehicles Personally Detailed
+          <span className="text-gray-400 text-xs ml-1">*</span>
         </>
       ),
       IconComponent: CheckCircle,
     },
-    { value: "100%", label: "Mobile Service", IconComponent: Navigation },
-    { value: "Detail Focused", label: "Approach", IconComponent: SearchCheck },
-    { value: "Pet-Friendly", label: "Solutions Offered", IconComponent: UserCheck },
+    {
+      value: '100%',
+      label: 'Mobile Service — We Come to You',
+      IconComponent: Navigation,
+    },
+    {
+      value: 'No Rush',
+      label: 'Details Done Properly',
+      IconComponent: SearchCheck,
+    },
+    {
+      value: 'Safe & Respectful',
+      label: (
+        <span className="block leading-tight text-sm sm:text-base">
+          Pet-Friendly<br />Process
+        </span>
+      ),
+      IconComponent: UserCheck,
+    },
   ];
 
   return (
@@ -52,8 +73,8 @@ const TrustStats: React.FC = () => {
             />
           ))}
         </div>
-        <p className="text-center text-xs text-gray-500 mt-8">
-          * "1,400+ Past Details" reflects prior experience before the official launch of DetailTrip.
+        <p className="text-center text-xs text-gray-500 mt-8 max-w-xl mx-auto">
+          * Reflects hands-on experience detailing over 1,400 vehicles before officially launching DetailTrip — every one done with care, not speed.
         </p>
       </div>
     </section>
