@@ -1,5 +1,4 @@
 // src/App.tsx
-import React from 'react'; // Ensure React is imported if not already
 import { Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';

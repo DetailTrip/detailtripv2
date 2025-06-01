@@ -31,21 +31,21 @@ const ServiceHighlights: React.FC = () => {
       to: "/services#interior", // Links to services page, potentially an anchor
       IconComponent: Car,
       title: "Expert Interior Cleaning",
-      description: "From quick tidy-ups to full resets, we rejuvenate your car's interior. Specialized in tackling everyday messes, salt, and pet fur.",
+      description: "From light refreshes to full resets, we clean with care — tackling salt, crumbs, and pet fur safely.",
       linkLabel: "View Interior Services"
     },
     {
       to: "/services#exterior", // Links to services page, potentially an anchor
       IconComponent: Sparkles,
       title: "Exterior Decon & Protect",
-      description: "Seasonal exterior service (Spring-Fall) to decontaminate your paint and protect it with a quality wax or sealant. Wheels, tires, and jambs included.",
+      description: "A full exterior service that removes stuck-on grime and adds protection with wax or sealant. Includes wheels, tires, and door jambs.",
       linkLabel: "View Exterior Service"
     },
     {
       to: "/lp/pet-lovers", // Links to the pet landing page
       IconComponent: ShieldCheck, // Could use a PawPrint icon from react-icons if preferred
       title: "Pet Owners' Choice",
-      description: "Specialized pet hair removal and deep cleaning to make your vehicle fresh and fur-free. We understand pets are family!",
+      description: "Specialized pet hair removal and deep interior cleaning. We treat your ride like home — fur-free and fresh.",
       linkLabel: "Pet-Focused Detailing"
     },
   ];
