@@ -57,7 +57,7 @@ const ServiceHighlights: React.FC = () => {
             We bring professional detailing to your doorstep in Timmins, focusing on what your vehicle truly needs.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+        <div className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
           {highlights.map((highlight) => (
             <HighlightItem
               key={highlight.title}
